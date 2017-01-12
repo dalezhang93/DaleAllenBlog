@@ -1,6 +1,6 @@
 ﻿# javascript for 循环
 
-标签（空格分隔）： javascript
+标签： javascript
 
 ---
 

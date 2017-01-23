@@ -8,7 +8,7 @@
 * [StringBuffer 和 StringBuilder](#stringbuffer-和-stringbuilder)
   * [字符串拼接](#字符串拼接)
   * [字符串缓冲区容量](#字符串缓冲区容量)
-* [String作为参数传递](#string作为参数传递)
+* [作为参数传递](#作为参数传递)
 
 <!-- tocstop -->
 
@@ -72,7 +72,7 @@ public boolean equals(Object anObject) {
         return false;// 传入参数不是 String对象,则返回false
     }
 ```
-- hashCode()方法被用来获取给定对象的唯一整数,默认的，Object类的hashCode()方法返回这个对象存储的内存地址的编号.String对象重写了该方法,根据字符串每一位计算,只要字符串字面量相同 hashCode返回值就一样,源码如下:
+- hashCode() 方法被用来获取给定对象的唯一整数,默认的 Object 类的 hashCode() 方法返回这个对象存储的内存地址的编号,String 类重写了该方法,根据字符串每一位计算,只要字符串字面量相同  hashCode()返回值就一样,源码如下:
 ```
 public int hashCode() {
         int h = hash;
@@ -89,15 +89,15 @@ public int hashCode() {
 ```
 ### StringBuffer 和 StringBuilder
 
-String,StringBuffer和StringBuilder类都是final不可变,不同的是StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象,而String 类的对象每次修改都会创建一个新的对象.
+String,StringBuffer 和 StringBuilder 类都是 final 不可变,不同的是 StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象,而 String 类的对象每次修改都会创建一个新的对象.
 
-StringBuilder相对于StringBuffer没有同步的操作,不是线程安全的,但也因此在速度上比StringBuffer快.
+StringBuilder 相对于 StringBuffer 没有同步的操作,不是线程安全的,但也因此在速度上比 StringBuffer 快.
 
 #### 字符串拼接
-- String对象的+操作,在底层会创建StringBuilder对象,使用append 方法拼接,并使用toString()转换为 String.
-- 在不要求线程安全的情况下,使用 StringBuilder 速度要比 StringBuffer 快,+操作最慢
-String 对象也可以使用 concat()方法拼接字符串,与+操作不同的时,参数只能是 String类型,而 +操作可以将其他类型转换为 String 类型
-- 但是如果是`String str = "abc"+"ef"`,str 变量在编译时就已确定是"abcef",因此在这种情况下速度比StringBuilder更快
+- String 对象的 + 操作,在底层会创建 StringBuilder 对象,使用 append()方法拼接,并使用 toString()转换为 String.
+- 在不要求线程安全的情况下,使用 StringBuilder 速度要比 StringBuffer 快,+ 操作最慢
+String 对象也可以使用 concat()方法拼接字符串,与 + 操作不同的时,参数只能是 String 类型,而 +操作可以将其他类型转换为 String 类型
+- 但是如果是`String str = "abc"+"ef"`,str 变量在编译时就已确定是"abcef",因此在这种情况下速度比 StringBuilder 更快
 
 #### 字符串缓冲区容量
 - 使用 StringBuffer、StringBuilder 的无参构造器产生的对象默认拥有 16 个字符长度大小的字符串缓冲区
@@ -106,7 +106,7 @@ String 对象也可以使用 concat()方法拼接字符串,与+操作不同的�
 - capacity()方法显示字符串缓冲区容量大小
 - 以 StringBuffer 为例,指定缓冲区大小为20的的 StringBuffer 对象`StringBuffer sb = new StringBuffer(20)`
 
-### String作为参数传递
+### 作为参数传递
 
 > java所有的参数传递都是值传递,传递的是变量所代表的值的副本
 

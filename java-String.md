@@ -47,7 +47,8 @@ System.out.println(str1==str2); // jdk6:false,jdk7:true
   - 对称性:x.equals(y)为 true,则y.equals(x)为 true
   - 传递性:x.equals(y),y.equals(z)均为 true,则x.equals(z)也为 true
   - 非空性: x.equals(null)返回 false
-String对象 Jdk 已经实现了该 equals()方法.源码如下:
+
+String对象 jdk 已经重写了该 equals()方法.源码如下:
 ```
 public boolean equals(Object anObject) {
         if (this == anObject) {

@@ -69,13 +69,16 @@ NodeList 继承自 NodeList.prototype,而数组继承自Array.prototype,因此�
 ### **常用API**
 ---
 **节点操作**
+
 	- element.hasChildNodes 是否拥有子节点
 	- element.children 返回节点元素集合
 	- element.childNodes 返回子节点集合
 	- element.parentNode 返回父节点
 	- element.cloneNode(deep)克隆节点,包括所有属性及属性值(包括 onclick,但不包括 addEventListener,onclick=fn这种动态绑定)
+    
 ---
 **属性和样式操作**
+
 	- element.getAttributeNode() 获取指定属性的节点
 	- element.setAttribute() 为节点设置属性,若属性不存在多数情况下返回null,某些返回空字符串,所以判断是否有指定属性,应使用 hasAttribute
 	- element.hasAttribute() 判断是否有指定属性
@@ -83,6 +86,7 @@ NodeList 继承自 NodeList.prototype,而数组继承自Array.prototype,因此�
 	- element.className 获取或者设置属性
 ---
 **创建,删除和替换节点**
+
 	- document.createElement()  创建元素节点
 	- document.createTextNode() 创建一个文本节点
 	- document.createDocumentFragment() 创建DocumentFragment节点
@@ -92,6 +96,7 @@ NodeList 继承自 NodeList.prototype,而数组继承自Array.prototype,因此�
 	- document.replaceData() 替换文本节点() 不如直接操作nodeValue
 ---
 **获取节点**
+
 	- document.getElementById() 根据`id`返回一个 Element 对象,没有返回 null
 	- document.getElementsByClassName
 	- document.getElementsByTagName(name) 返回一个 HTMLCollection;在 WebKit 内核的浏览器中返回一个 NodeList

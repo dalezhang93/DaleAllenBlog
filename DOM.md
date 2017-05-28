@@ -75,7 +75,7 @@ NodeList 继承自 NodeList.prototype,而数组继承自Array.prototype,因此�
 	- element.childNodes 返回子节点集合
 	- element.parentNode 返回父节点
 	- element.cloneNode(deep)克隆节点,包括所有属性及属性值(包括 onclick,但不包括 addEventListener,onclick=fn这种动态绑定)
-    
+
 ---
 **属性和样式操作**
 
@@ -135,7 +135,7 @@ collectTemp = null;
 
 ### 插入大量内容避免重绘和回流
 
-- createDocumentFragment
+- DocumentFragment 通过 js 操作 DOM树是很浪费性能的,尤其是增删会引起浏览器重新渲染.而`DocumentFragment`文档片段,并不存在于 DOM树中,而是存在于内存中,对其操作并不会引起重绘和回流.只需要将修改后的`DocumentFragment`插入到 DOM 中,这样只会引起一次浏览器渲染.需要注意的是:①往 DOM 树中插入文档片段,只会将其子节点插入 DOM 树中,文档片段也失去其子节点②将DOM树节点插入文档片段后,这些节点也会从 DOM 树消失
 
 ```
 var docFragm = document.createDocumentFragment();
